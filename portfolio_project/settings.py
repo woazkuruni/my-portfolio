@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 
 # =========================================================
@@ -8,17 +9,106 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 # =========================================================
 # SECURITY
 # =========================================================
 
-SECRET_KEY = "django-insecure-9(1%a*m2ck2@udfn3xb_uprsxfl&32(!z^+23#e#c@o4g43w&w"
+# Production-এ Render Environment Variable থেকে আসবে.
+# Local development-এর জন্য fallback key.
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-local-development-key-change-me"
+)
 
-DEBUG = True
 
-ALLOWED_HOSTS = []
+# Local:
+# DEBUG=True
+#
+# Render:
+# DEBUG=False
 
+DEBUG = os.environ.get(
+    "DEBUG",
+    "True"
+).lower() == "true"
+
+
+# =========================================================
+# ALLOWED HOSTS
+# =========================================================
+
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+]
+
+
+# Render automatically provides this environment variable.
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get(
+    "RENDER_EXTERNAL_HOSTNAME"
+)
+
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(
+        RENDER_EXTERNAL_HOSTNAME
+    )
+
+
+# Optional custom hosts from environment variable.
+#
+# Example:
+# ALLOWED_HOSTS=myportfolio.com,www.myportfolio.com
+
+extra_hosts = os.environ.get(
+    "ALLOWED_HOSTS",
+    ""
+)
+
+if extra_hosts:
+
+    ALLOWED_HOSTS.extend(
+        [
+            host.strip()
+            for host in extra_hosts.split(",")
+            if host.strip()
+        ]
+    )
+
+
+# =========================================================
+# CSRF TRUSTED ORIGINS
+# =========================================================
+
+CSRF_TRUSTED_ORIGINS = []
+
+
+if RENDER_EXTERNAL_HOSTNAME:
+
+    CSRF_TRUSTED_ORIGINS.append(
+        f"https://{RENDER_EXTERNAL_HOSTNAME}"
+    )
+
+
+# Optional custom trusted origins.
+#
+# Example:
+# CSRF_TRUSTED_ORIGINS=https://myportfolio.com,https://www.myportfolio.com
+
+extra_csrf_origins = os.environ.get(
+    "CSRF_TRUSTED_ORIGINS",
+    ""
+)
+
+if extra_csrf_origins:
+
+    CSRF_TRUSTED_ORIGINS.extend(
+        [
+            origin.strip()
+            for origin in extra_csrf_origins.split(",")
+            if origin.strip()
+        ]
+    )
 
 
 # =========================================================
@@ -44,7 +134,6 @@ INSTALLED_APPS = [
 ]
 
 
-
 # =========================================================
 # MIDDLEWARE
 # =========================================================
@@ -52,6 +141,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
 
     "django.middleware.security.SecurityMiddleware",
+
+    # WhiteNoise must stay directly after SecurityMiddleware.
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
 
@@ -68,13 +160,11 @@ MIDDLEWARE = [
 ]
 
 
-
 # =========================================================
 # URL CONFIG
 # =========================================================
 
 ROOT_URLCONF = "portfolio_project.urls"
-
 
 
 # =========================================================
@@ -113,13 +203,11 @@ TEMPLATES = [
 ]
 
 
-
 # =========================================================
 # WSGI
 # =========================================================
 
 WSGI_APPLICATION = "portfolio_project.wsgi.application"
-
 
 
 # =========================================================
@@ -139,7 +227,6 @@ DATABASES = {
     }
 
 }
-
 
 
 # =========================================================
@@ -179,7 +266,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 # =========================================================
 # INTERNATIONALIZATION
 # =========================================================
@@ -193,13 +279,37 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 # =========================================================
 # STATIC FILES
 # =========================================================
 
 STATIC_URL = "/static/"
 
+
+# collectstatic output directory
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+# Django 6 compatible storage configuration
+
+STORAGES = {
+
+    "default": {
+
+        "BACKEND":
+            "django.core.files.storage.FileSystemStorage",
+
+    },
+
+    "staticfiles": {
+
+        "BACKEND":
+            "whitenoise.storage.CompressedManifestStaticFilesStorage",
+
+    },
+
+}
 
 
 # =========================================================
@@ -211,7 +321,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 
-
 # =========================================================
 # EMAIL
 # =========================================================
@@ -220,6 +329,22 @@ EMAIL_BACKEND = (
     "django.core.mail.backends.console.EmailBackend"
 )
 
+
+# =========================================================
+# PROXY / HTTPS
+# =========================================================
+
+SECURE_PROXY_SSL_HEADER = (
+    "HTTP_X_FORWARDED_PROTO",
+    "https",
+)
+
+
+# Production cookies should only travel over HTTPS.
+
+SESSION_COOKIE_SECURE = not DEBUG
+
+CSRF_COOKIE_SECURE = not DEBUG
 
 
 # =========================================================
