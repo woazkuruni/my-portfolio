@@ -1,0 +1,342 @@
+[
+{
+  "model": "portfolio.project",
+  "pk": 5,
+  "fields": {
+    "title": "🍽️ Velora Food — Restaurant Food Ordering & Management System",
+    "description": "🚀 Excited to share my latest project — Velora!\r\n\r\nVelora is a modern and responsive web-based Restaurant Food Ordering & Management System developed to make online food browsing, ordering, payment, and restaurant administration simple and convenient.\r\n\r\nCustomers can explore food categories, search and filter foods, add items to their cart, manage wishlists, apply coupons, place orders, track order history, manage their profiles, and use supported payment methods.\r\n\r\nThe system also includes a dedicated Admin Dashboard for managing foods, categories, customers, inventory, coupons, reviews, orders, and payment verification.\r\n\r\n✨ Key Features\r\n\r\n🔐 Secure customer registration and login\r\n🍔 Food browsing by category\r\n🔎 Food search, filter, and sorting\r\n🛒 Shopping cart with quantity management\r\n❤️ Wishlist functionality\r\n🎟️ Coupon and discount system\r\n📦 Order placement and order tracking\r\n🧾 Order history and printable invoice\r\n👤 Customer profile management\r\n🖼️ Profile photo update\r\n📍 Multiple saved delivery addresses\r\n⭐ Food rating and review system\r\n💵 Cash on Delivery support\r\n📱 bKash and Nagad payment workflow\r\n💳 Optional SSLCommerz payment gateway integration\r\n📦 Food stock and inventory management\r\n👥 Customer management with block/unblock option\r\n🛠️ Complete Admin Dashboard\r\n📊 Revenue, order, customer, and inventory overview\r\n📱 Fully responsive desktop, tablet, and mobile interface\r\n🛡️ Secure password hashing, CSRF protection, prepared statements, and session management\r\n\r\n🛠️ Technologies Used\r\n\r\nPHP | MySQL | HTML5 | CSS3 | JavaScript | PDO | Apache | XAMPP\r\n\r\n🧩 Main Components\r\n\r\nUser Authentication | Customer Profile | Food Management | Category Management | Shopping Cart | Wishlist | Coupon Management | Checkout & Payment | Order Management | Review System | Inventory Management | Database Management | Admin Dashboard\r\n\r\nThis project helped me strengthen my practical understanding of full-stack web development, database integration, authentication, session management, CRUD operations, secure workflows, responsive design, and Git/GitHub version control.\r\n\r\nI would really appreciate any feedback or suggestions.\r\n\r\n#Velora #WebDevelopment #PHP #MySQL #JavaScript #FullStackDevelopment #SoftwareDevelopment #GitHub #StudentDeveloper",
+    "image": "project_images/Rest_Food_2.png",
+    "project_link": null,
+    "github_link": "https://github.com/woazkuruni/rest_food_v3",
+    "created_at": "2026-09-25T18:38:52.590Z"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 6,
+  "fields": {
+    "title": "🌐 Professional Portfolio Website",
+    "description": "A modern, responsive, and dynamic personal portfolio website developed using Django to showcase my academic background, technical skills, projects, education, courses, and professional information in a clean and organized way.\r\n\r\n⚙️ The website includes a customized Django Admin Panel that allows portfolio content to be added, updated, and managed dynamically without modifying the source code.\r\n\r\n✨ Key Features\r\n\r\n🎨 Modern and responsive portfolio design\r\n🖼️ Dynamic project showcase with images and descriptions\r\n🛠️ Technical skills and academic course management\r\n⚙️ Customized Django Admin Panel\r\n➕ Add, edit, and delete portfolio content dynamically\r\n🔗 GitHub repository and live project link support\r\n👨‍💻 About, Education, Skills, Projects, and Contact sections\r\n📱 Mobile-friendly and responsive user interface\r\n🗄️ Django model-based dynamic content management\r\n🔐 Custom Admin Login and Logout interface\r\n🌙 Dark and Light theme support for the Admin Panel\r\n\r\n💻 Technologies\r\n\r\n🐍 Python • 🌿 Django • HTML5 • CSS3 • Bootstrap • JavaScript • SQLite\r\n\r\n🧩 Main Components\r\n\r\n📦 Django Models\r\n👁️ Views\r\n📄 Templates\r\n⚙️ Admin Panel\r\n🗄️ Database Management\r\n📱 Responsive UI",
+    "image": "project_images/portfolio.png",
+    "project_link": null,
+    "github_link": "https://github.com/woazkuruni/my-portfolio",
+    "created_at": "2026-09-25T20:29:10.897Z"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 5,
+  "fields": {
+    "name": "Python",
+    "category": "Programming"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 6,
+  "fields": {
+    "name": "C",
+    "category": "Programming"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 7,
+  "fields": {
+    "name": "C++",
+    "category": "Programming"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 8,
+  "fields": {
+    "name": "Java",
+    "category": "Programming"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 9,
+  "fields": {
+    "name": "Php",
+    "category": "Programming"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 10,
+  "fields": {
+    "name": "HTML5",
+    "category": "Web Development"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 11,
+  "fields": {
+    "name": "CSS3",
+    "category": "Web Development"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 12,
+  "fields": {
+    "name": "Django",
+    "category": "Web Development"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 13,
+  "fields": {
+    "name": "Bootstrap",
+    "category": "Web Development"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 14,
+  "fields": {
+    "name": "REST API",
+    "category": "Web Development"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 15,
+  "fields": {
+    "name": "Artificial Intelligence",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 16,
+  "fields": {
+    "name": "Machine Learning",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 17,
+  "fields": {
+    "name": "Deep Learning",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 18,
+  "fields": {
+    "name": "PyTorch",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 19,
+  "fields": {
+    "name": "TensorFlow",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 20,
+  "fields": {
+    "name": "MySQL",
+    "category": "Database"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 21,
+  "fields": {
+    "name": "SQLite",
+    "category": "Database"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 22,
+  "fields": {
+    "name": "PostgreSQL",
+    "category": "Database"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 23,
+  "fields": {
+    "name": "Git",
+    "category": "Tools & Technologies"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 24,
+  "fields": {
+    "name": "GitHub",
+    "category": "Tools & Technologies"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 25,
+  "fields": {
+    "name": "VS Code",
+    "category": "Tools & Technologies"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 26,
+  "fields": {
+    "name": "Jupyter Notebook",
+    "category": "Tools & Technologies"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 27,
+  "fields": {
+    "name": "Kaggle",
+    "category": "Tools & Technologies"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 28,
+  "fields": {
+    "name": "NumPy",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 29,
+  "fields": {
+    "name": "Pandas",
+    "category": "AI / Machine Learning"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 30,
+  "fields": {
+    "name": "Google Colab",
+    "category": "Tools & Technologies"
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 1,
+  "fields": {
+    "name": "Data Structures and Algorithms",
+    "icon": "fa-solid fa-code-branch",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 2,
+  "fields": {
+    "name": "Object-Oriented Programming",
+    "icon": "fa-solid fa-cubes",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 3,
+  "fields": {
+    "name": "Database Management Systems",
+    "icon": "fa-solid fa-database",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 4,
+  "fields": {
+    "name": "Algorithm Design & Analysis",
+    "icon": "fa-solid fa-diagram-project",
+    "order": 4
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 5,
+  "fields": {
+    "name": "Software Engineering",
+    "icon": "fa-solid fa-gears",
+    "order": 5
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 6,
+  "fields": {
+    "name": "Operating Systems",
+    "icon": "fa-solid fa-microchip",
+    "order": 6
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 7,
+  "fields": {
+    "name": "Computer Networking",
+    "icon": "fa-solid fa-network-wired",
+    "order": 7
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 8,
+  "fields": {
+    "name": "Web Programming",
+    "icon": "fa-solid fa-globe",
+    "order": 8
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 9,
+  "fields": {
+    "name": "Artificial Intelligence",
+    "icon": "fa-solid fa-brain",
+    "order": 9
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 10,
+  "fields": {
+    "name": "Machine Learning",
+    "icon": "fa-solid fa-robot",
+    "order": 10
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 11,
+  "fields": {
+    "name": "Data Science",
+    "icon": "fa-solid fa-chart-pie",
+    "order": 11
+  }
+},
+{
+  "model": "portfolio.course",
+  "pk": 12,
+  "fields": {
+    "name": "Digital Image Processing",
+    "icon": "fa-solid fa-image",
+    "order": 12
+  }
+}
+]
