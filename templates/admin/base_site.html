@@ -1,0 +1,160 @@
+{% extends "admin/base.html" %}
+{% load static i18n %}
+
+
+{% block title %}
+    {% if subtitle %}
+        {{ subtitle }} |
+    {% endif %}
+    {{ title }} | MyPortfolio Admin
+{% endblock %}
+
+
+{% block extrastyle %}
+
+    {{ block.super }}
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portfolio/css/admin.css' %}?v=501"
+    >
+
+{% endblock %}
+
+
+{% block branding %}
+
+<div class="mp-brand">
+
+    <a
+        href="{% url 'admin:index' %}"
+        class="mp-brand-link"
+    >
+
+        <span class="mp-brand-logo">
+            MP
+        </span>
+
+        <span class="mp-brand-text">
+
+            <strong>
+                My<span>Portfolio</span>
+            </strong>
+
+            <small>
+                Admin Console
+            </small>
+
+        </span>
+
+    </a>
+
+</div>
+
+{% endblock %}
+
+
+{% block usertools %}
+
+{% if has_permission %}
+
+<div
+    id="user-tools"
+    class="mp-header-actions"
+>
+
+    <div class="mp-user-box">
+
+        <span class="mp-user-avatar">
+            <i class="fa-solid fa-user"></i>
+        </span>
+
+        <span class="mp-user-text">
+
+            <small>
+                Signed in as
+            </small>
+
+            <strong>
+                {% firstof user.get_short_name user.get_username %}
+            </strong>
+
+        </span>
+
+    </div>
+
+
+    <a
+        href="/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mp-site-button"
+        title="View Website"
+    >
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        <span>
+            View Site
+        </span>
+
+    </a>
+
+
+    {% if user.has_usable_password %}
+
+        <a
+            href="{% url 'admin:password_change' %}"
+            class="mp-header-icon"
+            title="Change Password"
+        >
+
+            <i class="fa-solid fa-key"></i>
+
+        </a>
+
+    {% endif %}
+
+
+    <div
+        class="mp-theme-button"
+        title="Change Theme"
+    >
+        {% include "admin/color_theme_toggle.html" %}
+    </div>
+
+
+    <form
+        action="{% url 'admin:logout' %}"
+        method="post"
+        class="mp-logout-form"
+    >
+
+        {% csrf_token %}
+
+        <button
+            type="submit"
+            class="mp-header-icon mp-logout-button"
+            title="Log Out"
+        >
+
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+
+{% block nav-global %}
+{% endblock %}

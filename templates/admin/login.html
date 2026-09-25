@@ -1,0 +1,183 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+
+{% block title %}
+Login | MyPortfolio Admin
+{% endblock %}
+
+
+{% block bodyclass %}
+{{ block.super }} mp-login-page
+{% endblock %}
+
+
+{% block nav-sidebar %}
+{% endblock %}
+
+
+{% block breadcrumbs %}
+{% endblock %}
+
+
+{% block usertools %}
+{% endblock %}
+
+
+{% block nav-global %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mp-auth-screen">
+
+    <div class="mp-auth-card">
+
+        <div class="mp-auth-brand">
+
+            <div class="mp-auth-logo">
+                MP
+            </div>
+
+            <div class="mp-auth-brand-text">
+
+                <strong>
+                    My<span>Portfolio</span>
+                </strong>
+
+                <small>
+                    ADMIN CONSOLE
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="mp-auth-body">
+
+            <div class="mp-auth-heading">
+
+                <span class="mp-auth-eyebrow">
+                    ADMINISTRATOR ACCESS
+                </span>
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p>
+                    Sign in to manage your portfolio content.
+                </p>
+
+            </div>
+
+
+            {% if form.non_field_errors %}
+
+                {% for error in form.non_field_errors %}
+
+                    <div class="mp-auth-error">
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+
+                        <span>
+                            {{ error }}
+                        </span>
+
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+
+            <form
+                action="{{ app_path }}"
+                method="post"
+                id="login-form"
+                class="mp-auth-form"
+            >
+
+                {% csrf_token %}
+
+
+                <div class="mp-auth-field">
+
+                    <label for="{{ form.username.id_for_label }}">
+                        Username
+                    </label>
+
+                    <div class="mp-auth-input">
+
+                        <span class="mp-auth-input-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        {{ form.username }}
+
+                    </div>
+
+                </div>
+
+
+                <div class="mp-auth-field">
+
+                    <label for="{{ form.password.id_for_label }}">
+                        Password
+                    </label>
+
+                    <div class="mp-auth-input">
+
+                        <span class="mp-auth-input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+
+                        {{ form.password }}
+
+                    </div>
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    name="next"
+                    value="{{ next }}"
+                >
+
+
+                <button
+                    type="submit"
+                    class="mp-auth-submit"
+                >
+
+                    <span>
+                        Log in
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="mp-auth-footer">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Secure administrator access
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,2877 @@
+/* =========================================================
+   MYPORTFOLIO ADMIN
+   CLEAN NATIVE DJANGO ADMIN THEME
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+========================================================= */
+
+:root {
+    --primary: #1687e8;
+    --secondary: #102744;
+    --accent: #45adff;
+
+    --primary-fg: #ffffff;
+
+    --body-fg: #263750;
+    --body-bg: #f4f7fb;
+    --body-quiet-color: #718198;
+    --body-loud-color: #10213b;
+
+    --header-color: #ffffff;
+    --header-branding-color: #ffffff;
+    --header-bg: #081a30;
+    --header-link-color: #ffffff;
+
+    --breadcrumbs-fg: #64748b;
+    --breadcrumbs-link-fg: #1687e8;
+    --breadcrumbs-bg: #ffffff;
+
+    --link-fg: #147edb;
+    --link-hover-color: #086bc2;
+    --link-selected-fg: #075da8;
+
+    --hairline-color: #e3eaf2;
+    --border-color: #dce5ef;
+
+    --error-fg: #dc2626;
+
+    --message-success-bg: #ecfdf5;
+    --message-warning-bg: #fffbeb;
+    --message-error-bg: #fef2f2;
+
+    --darkened-bg: #f6f9fc;
+    --selected-bg: #eaf4ff;
+    --selected-row: #f3f8fe;
+
+    --button-fg: #ffffff;
+    --button-bg: #1687e8;
+    --button-hover-bg: #0872cf;
+
+    --default-button-bg: #1687e8;
+    --default-button-hover-bg: #0872cf;
+
+    --close-button-bg: #64748b;
+    --close-button-hover-bg: #475569;
+
+    --delete-button-bg: #dc3545;
+    --delete-button-hover-bg: #b92534;
+
+    --mp-bg: #f4f7fb;
+    --mp-surface: #ffffff;
+    --mp-surface-soft: #f7f9fc;
+
+    --mp-text: #263750;
+    --mp-title: #10213b;
+    --mp-muted: #718198;
+
+    --mp-border: #dce5ef;
+
+    --mp-blue: #1687e8;
+    --mp-blue-dark: #0872cf;
+
+    --mp-green: #16a34a;
+    --mp-red: #dc3545;
+
+    --mp-radius: 12px;
+
+    --mp-shadow:
+        0 8px 25px
+        rgba(15, 40, 70, 0.05);
+}
+
+
+/* =========================================================
+   02. DARK THEME
+========================================================= */
+
+html[data-theme="dark"] {
+    --body-fg: #d9e5f1;
+    --body-bg: #081522;
+
+    --body-quiet-color: #8ea3ba;
+    --body-loud-color: #f5f9ff;
+
+    --breadcrumbs-bg: #0d1b2b;
+    --breadcrumbs-fg: #9aadc0;
+
+    --darkened-bg: #102033;
+    --selected-bg: #132b44;
+    --selected-row: #10283f;
+
+    --hairline-color: #26394e;
+    --border-color: #26394e;
+
+    --mp-bg: #081522;
+
+    --mp-surface: #0d1b2b;
+
+    --mp-surface-soft: #102033;
+
+    --mp-text: #d9e5f1;
+
+    --mp-title: #f5f9ff;
+
+    --mp-muted: #8ea3ba;
+
+    --mp-border: #26394e;
+
+    --mp-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   03. GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--mp-text);
+
+    background: var(--mp-bg);
+}
+
+
+a {
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   04. HEADER
+========================================================= */
+
+#header {
+    width: 100%;
+
+    min-height: 68px !important;
+
+    height: 68px;
+
+    padding:
+        0 24px !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+
+    justify-content: flex-start !important;
+
+    gap: 18px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07172a 0%,
+            #0b213c 50%,
+            #102b4a 100%
+        ) !important;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 5px 22px
+        rgba(4, 18, 36, 0.17);
+}
+
+
+/* =========================================================
+   05. BRAND
+========================================================= */
+
+#branding {
+    flex:
+        0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    margin:
+        0 auto
+        0 0 !important;
+
+    padding: 0 !important;
+}
+
+
+#site-name {
+    margin: 0;
+}
+
+
+.mp-brand {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.mp-brand-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+}
+
+
+.mp-brand-logo {
+    width: 39px;
+    height: 39px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #28a5ff,
+            #0875e2
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 7px 17px
+        rgba(7, 124, 230, 0.27);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+}
+
+
+.mp-brand-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    line-height: 1.05;
+}
+
+
+.mp-brand-text strong {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.35px;
+
+    white-space: nowrap;
+}
+
+
+.mp-brand-text strong span {
+    color: #42adff;
+}
+
+
+.mp-brand-text small {
+    margin-top: 5px;
+
+    color: #819ab4;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   06. HEADER ACTIONS
+========================================================= */
+
+#user-tools.mp-header-actions {
+    flex:
+        0 0 auto !important;
+
+    width: auto !important;
+
+    max-width: none !important;
+
+    margin:
+        0 0
+        0 auto !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: center;
+
+    justify-content: flex-end !important;
+
+    gap: 7px;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   07. USER BOX
+========================================================= */
+
+.mp-user-box {
+    height: 40px;
+
+    padding:
+        5px 11px
+        5px 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+}
+
+
+.mp-user-avatar {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #55b9ff;
+
+    background:
+        rgba(38, 153, 247, 0.12);
+
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+
+.mp-user-text {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 1.1;
+}
+
+
+.mp-user-text small {
+    color: #748da8;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+
+.mp-user-text strong {
+    margin-top: 3px;
+
+    color: #eef7ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   08. VIEW SITE
+========================================================= */
+
+.mp-site-button {
+    height: 40px !important;
+
+    min-height: 40px !important;
+
+    padding:
+        0 13px !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 7px;
+
+    color: #ddecfb !important;
+
+    background:
+        rgba(32, 151, 247, 0.10);
+
+    border:
+        1px solid
+        rgba(66, 174, 255, 0.19);
+
+    border-radius: 9px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+}
+
+
+.mp-site-button span,
+.mp-site-button i {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    line-height: 1 !important;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.mp-site-button:hover {
+    color: #ffffff !important;
+
+    background:
+        rgba(32, 151, 247, 0.20);
+
+    border-color:
+        rgba(66, 174, 255, 0.36);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   09. HEADER ICON BUTTON
+========================================================= */
+
+.mp-header-icon {
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    padding: 0 !important;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #aabfd4 !important;
+
+    background:
+        rgba(255, 255, 255, 0.035) !important;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08) !important;
+
+    border-radius:
+        9px !important;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    text-decoration: none !important;
+
+    box-shadow: none !important;
+}
+
+
+.mp-header-icon:hover {
+    color: #ffffff !important;
+
+    background:
+        rgba(38, 153, 247, 0.15) !important;
+
+    border-color:
+        rgba(65, 173, 255, 0.27) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   10. THEME
+========================================================= */
+
+.mp-theme-button {
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 9px;
+}
+
+
+.mp-theme-button .theme-toggle {
+    width: 100% !important;
+
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    color: #b2c6d9 !important;
+
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.mp-theme-button:hover {
+    background:
+        rgba(38, 153, 247, 0.15);
+
+    border-color:
+        rgba(65, 173, 255, 0.27);
+}
+
+
+.mp-theme-button svg {
+    width: 18px;
+
+    height: 18px;
+}
+
+
+/* =========================================================
+   11. LOGOUT HEADER BUTTON
+========================================================= */
+
+.mp-logout-form {
+    display: flex;
+
+    align-items: center;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.mp-logout-button:hover {
+    color: #ffffff !important;
+
+    background:
+        rgba(220, 53, 69, 0.16) !important;
+
+    border-color:
+        rgba(220, 53, 69, 0.30) !important;
+}
+
+
+/* =========================================================
+   12. BREADCRUMBS
+========================================================= */
+
+div.breadcrumbs,
+ol.breadcrumbs {
+    min-height: 52px;
+
+    margin: 0;
+
+    padding:
+        0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    color:
+        var(--mp-muted);
+
+    background:
+        var(--mp-surface);
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+ol.breadcrumbs {
+    list-style: none;
+}
+
+
+ol.breadcrumbs li {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+div.breadcrumbs a,
+ol.breadcrumbs a {
+    padding:
+        6px 9px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    color: #3579b8;
+
+    background:
+        rgba(22, 135, 232, 0.06);
+
+    border:
+        1px solid
+        rgba(22, 135, 232, 0.10);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-decoration: none !important;
+}
+
+
+div.breadcrumbs a:hover,
+ol.breadcrumbs a:hover {
+    color: #0872cf;
+
+    background:
+        rgba(22, 135, 232, 0.11);
+
+    border-color:
+        rgba(22, 135, 232, 0.18);
+}
+
+
+ol.breadcrumbs li + li::before {
+    content: "›";
+
+    margin:
+        0 2px;
+
+    color: #9aaabd;
+
+    font-size: 17px;
+}
+
+
+ol.breadcrumbs li[aria-current="page"] {
+    padding:
+        6px 8px;
+
+    color:
+        var(--mp-title);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   13. MAIN
+========================================================= */
+
+.main {
+    background:
+        var(--mp-bg);
+}
+
+
+#content {
+    width: 100%;
+
+    max-width: 1500px;
+
+    padding:
+        32px 30px;
+}
+
+
+#content h1 {
+    margin:
+        0 0 25px;
+
+    color:
+        var(--mp-title);
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.6px;
+}
+
+
+#content h2 {
+    color:
+        var(--mp-title);
+}
+
+
+/* =========================================================
+   14. NATIVE SIDEBAR
+========================================================= */
+
+#toggle-nav-sidebar {
+    width: 34px;
+
+    color:
+        var(--mp-muted);
+
+    background:
+        var(--mp-bg);
+
+    border-right:
+        1px solid
+        var(--mp-border);
+}
+
+
+#nav-sidebar {
+    width: 235px;
+
+    min-width: 235px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0d1d31,
+            #091625
+        );
+
+    border-right: none;
+
+    box-shadow:
+        6px 0 22px
+        rgba(7, 24, 45, 0.06);
+}
+
+
+#nav-sidebar .module {
+    margin: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+}
+
+
+#nav-sidebar .module caption {
+    padding:
+        21px 16px
+        9px;
+
+    color: #607993;
+
+    background: transparent;
+
+    border: 0;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+#nav-sidebar table {
+    width: 100%;
+}
+
+
+#nav-sidebar tr,
+#nav-sidebar th,
+#nav-sidebar td {
+    background: transparent;
+
+    border: 0;
+}
+
+
+#nav-sidebar th,
+#nav-sidebar td {
+    padding: 0;
+}
+
+
+#nav-sidebar th a,
+#nav-sidebar td a {
+    min-height: 41px;
+
+    margin:
+        3px 11px;
+
+    padding:
+        9px 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    color: #9fb4ca;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-decoration: none !important;
+}
+
+
+#nav-sidebar th a:hover,
+#nav-sidebar td a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(38, 153, 247, 0.12);
+}
+
+
+#nav-sidebar .current-model {
+    background: transparent;
+}
+
+
+#nav-sidebar .current-model th a,
+#nav-sidebar .current-model td a {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 143, 239, 0.28),
+            rgba(30, 143, 239, 0.10)
+        );
+
+    box-shadow:
+        inset 3px 0 0
+        #229bff;
+}
+
+
+/* =========================================================
+   15. MODULE
+========================================================= */
+
+.module {
+    overflow: hidden;
+
+    margin-bottom: 22px;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius:
+        var(--mp-radius);
+
+    box-shadow:
+        var(--mp-shadow);
+}
+
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    margin: 0;
+
+    padding:
+        14px 17px;
+
+    color:
+        var(--mp-title);
+
+    background:
+        var(--mp-surface-soft);
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   16. DASHBOARD
+========================================================= */
+
+.dashboard #content {
+    width: 100%;
+
+    max-width: 1160px;
+}
+
+
+.dashboard #content-main {
+    width: 67%;
+}
+
+
+.dashboard #content-related {
+    width: 30%;
+
+    margin-left: 3%;
+}
+
+
+.dashboard .module table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.dashboard .module th,
+.dashboard .module td {
+    padding:
+        12px 14px;
+
+    vertical-align: middle;
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+}
+
+
+.dashboard .module tr:last-child th,
+.dashboard .module tr:last-child td {
+    border-bottom: 0;
+}
+
+
+.dashboard .module tr:hover {
+    background:
+        rgba(22, 135, 232, 0.035);
+}
+
+
+/* =========================================================
+   17. ADD / CHANGE BUTTON
+========================================================= */
+
+.dashboard .module .addlink,
+.dashboard .module .changelink {
+    min-width: 76px;
+
+    min-height: 32px;
+
+    padding:
+        6px 10px !important;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 7px;
+
+    background-image:
+        none !important;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration:
+        none !important;
+}
+
+
+.dashboard .module .addlink {
+    color:
+        #15803d !important;
+
+    background:
+        rgba(34, 197, 94, 0.09);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.22);
+}
+
+
+.dashboard .module .addlink::before {
+    content: "+";
+
+    width: 17px;
+
+    height: 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        #22a447;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.dashboard .module .addlink:hover {
+    color:
+        #ffffff !important;
+
+    background:
+        #16a34a;
+
+    border-color:
+        #16a34a;
+}
+
+
+.dashboard .module .changelink {
+    color:
+        #1478cb !important;
+
+    background:
+        rgba(22, 135, 232, 0.08);
+
+    border:
+        1px solid
+        rgba(22, 135, 232, 0.22);
+}
+
+
+.dashboard .module .changelink::before {
+    content: "✎";
+
+    width: 17px;
+
+    height: 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        #1687e8;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.dashboard .module .changelink:hover {
+    color:
+        #ffffff !important;
+
+    background:
+        #1687e8;
+
+    border-color:
+        #1687e8;
+}
+
+
+.dashboard .module td:last-child,
+.dashboard .module td:nth-last-child(2) {
+    width: 98px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   18. RECENT ACTIONS
+========================================================= */
+
+#recent-actions-module {
+    overflow: hidden;
+}
+
+
+#recent-actions-module h2 {
+    margin: 0;
+}
+
+
+.actionlist {
+    padding:
+        7px 15px
+        14px;
+}
+
+
+.actionlist li {
+    padding:
+        9px 0;
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+.actionlist li:last-child {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   19. CHANGE LIST
+========================================================= */
+
+#changelist,
+#changelist-form {
+    background: transparent;
+}
+
+
+#changelist .results {
+    overflow: auto;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 11px;
+
+    box-shadow:
+        var(--mp-shadow);
+}
+
+
+/* =========================================================
+   20. TABLE
+========================================================= */
+
+#result_list {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+#result_list thead th {
+    padding:
+        13px 14px;
+
+    color:
+        var(--mp-muted);
+
+    background:
+        var(--mp-surface-soft);
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+}
+
+
+#result_list thead th a {
+    color:
+        var(--mp-muted);
+}
+
+
+#result_list tbody td,
+#result_list tbody th {
+    padding:
+        13px 14px;
+
+    vertical-align: middle;
+
+    color:
+        var(--mp-text);
+
+    background:
+        var(--mp-surface);
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+}
+
+
+#result_list tbody tr:hover td,
+#result_list tbody tr:hover th {
+    background:
+        var(--selected-row);
+}
+
+
+/* =========================================================
+   21. SEARCH
+========================================================= */
+
+#toolbar {
+    margin-bottom: 17px;
+
+    padding:
+        13px 15px;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 10px;
+
+    box-shadow:
+        var(--mp-shadow);
+}
+
+
+#toolbar form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+#searchbar {
+    min-width: 280px;
+
+    min-height: 40px;
+}
+
+
+/* =========================================================
+   22. FORM INPUTS
+========================================================= */
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+    max-width: 100%;
+
+    color:
+        var(--mp-text);
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+
+.form-row input[type="text"],
+.form-row input[type="url"],
+.form-row input[type="email"],
+.form-row input[type="password"],
+.form-row input[type="number"],
+.form-row input[type="search"],
+.form-row select {
+    width:
+        min(
+            100%,
+            620px
+        );
+
+    height: 44px;
+
+    min-height: 44px;
+
+    padding:
+        0 13px;
+
+    line-height: normal;
+}
+
+
+.form-row select {
+    padding:
+        0 40px
+        0 13px;
+
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+
+.form-row textarea {
+    width:
+        min(
+            100%,
+            820px
+        );
+
+    min-height: 140px;
+
+    padding:
+        12px 13px;
+
+    line-height: 1.6;
+
+    resize: vertical;
+}
+
+
+input[type="file"] {
+    max-width: 100%;
+
+    padding: 8px;
+
+    color:
+        var(--mp-text);
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 8px;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-color:
+        #2499f5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(36, 153, 245, 0.13);
+}
+
+
+/* =========================================================
+   23. FORM ROWS
+========================================================= */
+
+.form-row {
+    padding:
+        18px 20px;
+
+    border-bottom:
+        1px solid
+        var(--mp-border);
+}
+
+
+.form-row label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--mp-title);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.readonly {
+    color:
+        var(--mp-text);
+
+    line-height: 1.5;
+}
+
+
+fieldset.module {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   24. GENERAL BUTTONS
+========================================================= */
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button {
+    min-height: 38px;
+
+    padding:
+        8px 16px;
+
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #188cf0,
+            #0872d7
+        );
+
+    border: 0;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px
+        rgba(9, 117, 218, 0.13);
+}
+
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover,
+a.button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #087be5,
+            #0564bd
+        );
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   25. SAVE
+========================================================= */
+
+.submit-row {
+    padding: 15px;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 10px;
+
+    box-shadow:
+        var(--mp-shadow);
+}
+
+
+/* =========================================================
+   26. DELETE
+========================================================= */
+
+.deletelink,
+.submit-row a.deletelink {
+    padding:
+        8px 15px !important;
+
+    color:
+        #ffffff !important;
+
+    background:
+        #dc3545 !important;
+
+    border-radius:
+        8px !important;
+
+    font-weight:
+        700 !important;
+}
+
+
+/* =========================================================
+   27. OBJECT TOOLS
+========================================================= */
+
+.object-tools a {
+    padding:
+        8px 14px !important;
+
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #168cf0,
+            #0872d5
+        ) !important;
+
+    border-radius:
+        8px !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        700 !important;
+}
+
+
+/* =========================================================
+   28. FILTER
+========================================================= */
+
+#changelist-filter {
+    overflow: hidden;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 11px;
+
+    box-shadow:
+        var(--mp-shadow);
+}
+
+
+#changelist-filter h2 {
+    padding:
+        13px 15px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10243f,
+            #183956
+        );
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+#changelist-filter h3 {
+    padding:
+        12px 15px
+        5px;
+
+    color:
+        var(--mp-title);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   29. PAGINATION
+========================================================= */
+
+.paginator {
+    padding: 15px;
+
+    color:
+        var(--mp-muted);
+}
+
+
+/* =========================================================
+   30. MESSAGES
+========================================================= */
+
+.messagelist {
+    padding:
+        0 30px;
+}
+
+
+.messagelist li {
+    margin:
+        15px 0 0;
+
+    padding:
+        12px 15px;
+
+    border-radius: 8px;
+}
+
+
+.messagelist .success {
+    color: #166534;
+
+    background:
+        #ecfdf5;
+}
+
+
+.messagelist .warning {
+    color: #92400e;
+
+    background:
+        #fffbeb;
+}
+
+
+.messagelist .error {
+    color: #991b1b;
+
+    background:
+        #fef2f2;
+}
+
+
+/* =========================================================
+   31. HELP
+========================================================= */
+
+.help,
+p.help,
+form p.help,
+div.help {
+    color:
+        var(--mp-muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color:
+        #1687e8;
+}
+
+/* =========================================================
+   LOGIN / LOGOUT PAGE STRUCTURE FIX
+========================================================= */
+
+.mp-login-page #header,
+.mp-logged-out-page #header {
+    display: none !important;
+}
+
+
+.mp-login-page #container,
+.mp-logged-out-page #container {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background:
+        var(--mp-bg) !important;
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/*
+   IMPORTANT:
+   Do NOT hide #content-start.
+   Django keeps the actual page content inside it.
+*/
+
+.mp-login-page #content-start,
+.mp-logged-out-page #content-start {
+    width: 100% !important;
+
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    display: block !important;
+
+    background:
+        transparent !important;
+}
+
+
+.mp-login-page .main,
+.mp-logged-out-page .main {
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    display: block !important;
+
+    background:
+        transparent !important;
+}
+
+
+.mp-login-page #content,
+.mp-logged-out-page #content {
+    width: 100% !important;
+
+    max-width: none !important;
+
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   AUTH SCREEN
+========================================================= */
+
+.mp-auth-screen {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        30px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 5%,
+            rgba(22, 135, 232, 0.11),
+            transparent 36%
+        ),
+        var(--mp-bg);
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.mp-auth-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    overflow: hidden;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(7, 35, 66, 0.13);
+}
+
+
+.mp-auth-brand {
+    padding:
+        20px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #091d35,
+            #102f52
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.mp-auth-logo {
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #29a6ff,
+            #0874df
+        );
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(8, 116, 223, 0.27);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.mp-auth-brand-text {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.05;
+}
+
+
+.mp-auth-brand-text strong {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+.mp-auth-brand-text strong span {
+    color: #42adff;
+}
+
+
+.mp-auth-brand-text small {
+    margin-top: 5px;
+
+    color: #829bb7;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.mp-auth-body {
+    padding:
+        30px 34px
+        27px;
+}
+
+
+.mp-auth-heading {
+    margin-bottom: 25px;
+}
+
+
+.mp-auth-eyebrow {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--mp-blue);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.mp-auth-heading h1 {
+    margin:
+        0 0 8px !important;
+
+    color:
+        var(--mp-title);
+
+    font-size:
+        25px !important;
+
+    font-weight: 800;
+}
+
+
+.mp-auth-heading p {
+    margin: 0;
+
+    color:
+        var(--mp-muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.mp-auth-field {
+    margin-bottom: 19px;
+}
+
+
+.mp-auth-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--mp-title);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.mp-auth-input {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.mp-auth-input-icon {
+    position: absolute;
+
+    top: 50%;
+
+    left: 14px;
+
+    z-index: 2;
+
+    transform:
+        translateY(-50%);
+
+    color: #7890aa;
+
+    font-size: 12px;
+
+    pointer-events: none;
+}
+
+
+.mp-auth-input input {
+    width: 100% !important;
+
+    height: 46px !important;
+
+    min-height: 46px !important;
+
+    margin: 0 !important;
+
+    padding:
+        0 14px
+        0 40px !important;
+
+    color:
+        var(--mp-text);
+
+    background:
+        var(--mp-surface-soft);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    line-height: normal !important;
+}
+
+
+.mp-auth-input input:focus {
+    outline: none;
+
+    background:
+        var(--mp-surface);
+
+    border-color:
+        #2499f5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(36, 153, 245, 0.12);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.mp-auth-submit {
+    width: 100%;
+
+    height: 45px;
+
+    margin:
+        5px 0 0 !important;
+
+    padding:
+        0 17px !important;
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b94f6,
+            #0874db
+        ) !important;
+
+    border:
+        none !important;
+
+    border-radius:
+        9px !important;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px
+        rgba(8, 116, 219, 0.18) !important;
+}
+
+
+.mp-auth-submit:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #087ee8,
+            #0564be
+        ) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   AUTH FOOTER
+========================================================= */
+
+.mp-auth-footer {
+    margin-top: 25px;
+
+    padding-top: 19px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    color:
+        var(--mp-muted);
+
+    border-top:
+        1px solid
+        var(--mp-border);
+
+    font-size: 9px;
+}
+
+
+.mp-auth-footer i {
+    color: #16a34a;
+}
+/* =========================================================
+   37. LOGOUT CARD
+========================================================= */
+
+.mp-logout-card {
+    width: 100%;
+
+    max-width: 470px;
+
+    padding:
+        40px 36px
+        27px;
+
+    text-align: center;
+
+    background:
+        var(--mp-surface);
+
+    border:
+        1px solid
+        var(--mp-border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(7, 35, 66, 0.13);
+}
+
+
+.mp-logout-success {
+    width: 64px;
+
+    height: 64px;
+
+    margin:
+        0 auto 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #20a4ff,
+            #0874de
+        );
+
+    border-radius: 18px;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(8, 116, 222, 0.24);
+}
+
+
+.mp-logout-card h1 {
+    margin:
+        0 0 13px !important;
+
+    color:
+        var(--mp-title);
+
+    font-size:
+        26px !important;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
+}
+
+
+.mp-logout-card > p {
+    max-width: 370px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--mp-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.mp-logout-actions {
+    margin-top: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.mp-login-again,
+.mp-back-website {
+    min-height: 42px;
+
+    padding:
+        0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-decoration: none !important;
+}
+
+
+.mp-login-again {
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #188cf0,
+            #0872d7
+        );
+
+    border:
+        1px solid
+        transparent;
+
+    box-shadow:
+        0 8px 18px
+        rgba(9, 117, 218, 0.16);
+}
+
+
+.mp-login-again:hover {
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087be5,
+            #0564bd
+        );
+
+    transform:
+        translateY(-1px);
+}
+
+
+.mp-back-website {
+    color:
+        var(--mp-text) !important;
+
+    background:
+        var(--mp-surface-soft);
+
+    border:
+        1px solid
+        var(--mp-border);
+}
+
+
+.mp-back-website:hover {
+    color:
+        var(--mp-blue) !important;
+
+    background:
+        var(--selected-bg);
+
+    border-color:
+        rgba(22, 135, 232, 0.25);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   38. RESPONSIVE LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    #header {
+        padding:
+            0 16px !important;
+
+        gap: 10px;
+    }
+
+
+    .mp-user-text {
+        display: none;
+    }
+
+
+    .mp-user-box {
+        width: 40px;
+
+        padding: 4px;
+
+        justify-content: center;
+    }
+
+
+    .dashboard #content-main {
+        width: 64%;
+    }
+
+
+    .dashboard #content-related {
+        width: 33%;
+
+        margin-left: 3%;
+    }
+
+}
+
+
+/* =========================================================
+   39. RESPONSIVE SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #header {
+        min-height:
+            64px !important;
+
+        height: 64px;
+
+        padding:
+            0 12px !important;
+
+        gap: 7px;
+    }
+
+
+    .mp-brand-text small {
+        display: none;
+    }
+
+
+    .mp-brand-text strong {
+        font-size: 15px;
+    }
+
+
+    .mp-brand-logo {
+        width: 36px;
+
+        height: 36px;
+    }
+
+
+    .mp-site-button {
+        width: 38px !important;
+
+        height: 38px !important;
+
+        min-width: 38px !important;
+
+        min-height: 38px !important;
+
+        padding:
+            0 !important;
+    }
+
+
+    .mp-site-button span {
+        display: none !important;
+    }
+
+
+    .mp-header-icon,
+    .mp-theme-button {
+        width: 38px;
+
+        height: 38px;
+
+        min-width: 38px;
+    }
+
+
+    #content {
+        padding:
+            27px 20px;
+    }
+
+
+    #nav-sidebar {
+        width: 205px;
+
+        min-width: 205px;
+    }
+
+
+    .dashboard #content-main,
+    .dashboard #content-related {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    .dashboard #content-related {
+        margin-top: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   40. TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #header {
+        min-height:
+            60px !important;
+
+        height: 60px;
+
+        padding:
+            0 9px !important;
+
+        gap: 5px;
+    }
+
+
+    .mp-user-box {
+        display: none !important;
+    }
+
+
+    .mp-brand-logo {
+        width: 34px;
+
+        height: 34px;
+    }
+
+
+    .mp-brand-text strong {
+        font-size: 14px;
+    }
+
+
+    .mp-site-button,
+    .mp-header-icon,
+    .mp-theme-button {
+        width: 35px !important;
+
+        height: 35px !important;
+
+        min-width: 35px !important;
+
+        min-height: 35px !important;
+    }
+
+
+    div.breadcrumbs,
+    ol.breadcrumbs {
+        min-height: 46px;
+
+        padding:
+            8px 14px;
+    }
+
+
+    #content {
+        padding:
+            22px 14px;
+    }
+
+
+    #content h1 {
+        font-size: 23px;
+    }
+
+
+    .form-row input[type="text"],
+    .form-row input[type="url"],
+    .form-row input[type="email"],
+    .form-row input[type="password"],
+    .form-row input[type="number"],
+    .form-row input[type="search"],
+    .form-row select,
+    .form-row textarea {
+        width: 100%;
+    }
+
+
+    #toolbar form {
+        flex-wrap: wrap;
+    }
+
+
+    #searchbar {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   41. MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    #header {
+        padding:
+            0 7px !important;
+
+        gap: 4px;
+    }
+
+
+    .mp-brand-text {
+        display: none;
+    }
+
+
+    .mp-brand-logo {
+        width: 33px;
+
+        height: 33px;
+    }
+
+
+    .mp-site-button,
+    .mp-header-icon,
+    .mp-theme-button {
+        width: 33px !important;
+
+        height: 33px !important;
+
+        min-width: 33px !important;
+
+        min-height: 33px !important;
+    }
+
+
+    .mp-auth-screen {
+        padding:
+            20px 13px;
+
+        align-items: center;
+    }
+
+
+    .mp-auth-card,
+    .mp-logout-card {
+        border-radius: 15px;
+    }
+
+
+    .mp-auth-body {
+        padding:
+            26px 21px
+            23px;
+    }
+
+
+    .mp-auth-brand {
+        padding:
+            18px 21px;
+    }
+
+
+    .mp-auth-logo {
+        width: 39px;
+
+        height: 39px;
+    }
+
+
+    .mp-auth-heading h1 {
+        font-size:
+            22px !important;
+    }
+
+
+    .mp-logout-card {
+        padding:
+            32px 20px
+            23px;
+    }
+
+
+    .mp-logout-card h1 {
+        font-size:
+            22px !important;
+    }
+
+
+    .mp-logout-success {
+        width: 57px;
+
+        height: 57px;
+
+        border-radius: 15px;
+
+        font-size: 20px;
+    }
+
+
+    .mp-logout-actions {
+        flex-direction: column;
+    }
+
+
+    .mp-login-again,
+    .mp-back-website {
+        width: 100%;
+    }
+
+
+    #content {
+        padding:
+            20px 11px;
+    }
+
+}

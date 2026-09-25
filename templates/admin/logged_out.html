@@ -1,0 +1,107 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+
+{% block title %}
+Logged Out | MyPortfolio Admin
+{% endblock %}
+
+
+{% block bodyclass %}
+{{ block.super }} mp-logged-out-page
+{% endblock %}
+
+
+{% block nav-sidebar %}
+{% endblock %}
+
+
+{% block breadcrumbs %}
+{% endblock %}
+
+
+{% block usertools %}
+{% endblock %}
+
+
+{% block nav-global %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mp-auth-screen">
+
+    <div class="mp-logout-card">
+
+
+        <div class="mp-logout-success">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <span class="mp-auth-eyebrow">
+            SESSION ENDED
+        </span>
+
+
+        <h1>
+            Successfully logged out
+        </h1>
+
+
+        <p>
+            Your administrator session has been securely closed.
+            Sign in again whenever you need to manage your portfolio.
+        </p>
+
+
+        <div class="mp-logout-actions">
+
+            <a
+                href="{% url 'admin:login' %}"
+                class="mp-login-again"
+            >
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                <span>
+                    Log in again
+                </span>
+
+            </a>
+
+
+            <a
+                href="/"
+                class="mp-back-website"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                <span>
+                    Back to Website
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="mp-auth-footer">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                Your administrative session has ended securely
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
